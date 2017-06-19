@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.channels.SocketChannel;
 import java.util.Date;
 
 public class MemoryMappedFileExample {
@@ -20,6 +21,8 @@ public class MemoryMappedFileExample {
 		FileChannel fileChannel = new RandomAccessFile(file, "rw").getChannel();
 		
 		MappedByteBuffer out = fileChannel.map(FileChannel.MapMode.READ_WRITE, 0, 1024);
+		
+		
 		Date curDate = new Date();
 		long dateStr = curDate.getTime();
 		String res = "hi,time:" + dateStr;
