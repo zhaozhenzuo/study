@@ -1,31 +1,32 @@
 package concurrent;
 
-import java.math.BigDecimal;
-
 public class A {
-	
+
 	private String value;
-	
+
 	Integer[] ints;
-	
+
 	private final int v;
-	
-	
-	public static void main(String[] args) {
-		double amount=10000;
-		BigDecimal tenThousandRate=new BigDecimal("1");
-		
-		BigDecimal annualRate=tenThousandRate.multiply(new BigDecimal("365")).divide(new BigDecimal("10000"));
-		
-//		50000×（1+3%）^30;
+
+	private static final int normalizeCapacity(int capacity) {
+		// Normalize to multiple of 1024
+		int q = capacity >>> 10;
+		int r = capacity & 1023;
+		if (r != 0) {
+			q++;
+		}
+		return q << 10;
 	}
-	
-	
-	public A(int v){
-////		ints=new Integer[10];
-//		Integer i1=new Integer(100228);
-//		ints[0]=i1;
-		this.v=v;
+
+	public static void main(String[] args) {	
+		System.out.println(normalizeCapacity(65535));
+	}
+
+	public A(int v) {
+		//// ints=new Integer[10];
+		// Integer i1=new Integer(100228);
+		// ints[0]=i1;
+		this.v = v;
 	}
 
 	public String getValue() {
@@ -35,7 +36,5 @@ public class A {
 	public void setValue(String value) {
 		this.value = value;
 	}
-	
-	
 
 }

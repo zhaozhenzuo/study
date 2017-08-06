@@ -3,6 +3,8 @@ package io;
 import java.lang.reflect.Field;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
 
 import sun.misc.Unsafe;
 
@@ -32,22 +34,34 @@ public class DirectMemTest {
 	public static void main(String[] args) {
 
 		ByteBuffer byteBuffer = ByteBuffer.allocateDirect(1024);
-
-		byte[] array = "abc".getBytes();
-
-		byteBuffer.put(array);
-
-		byteBuffer.flip();
-
-		byte[] dst = new byte[array.length];
-
-		byteBuffer.get(dst);
-
-		System.out.println(new String(dst));
 		
-		long baseOffset=getBaseAddress(byteBuffer);
+		List<ByteBuffer> resList=new ArrayList<ByteBuffer>();
 		
-		System.out.println(baseOffset);
+		List<Byte[]> byteList=new ArrayList<Byte[]>();
+		
+		while(true){
+			System.out.println();
+			ByteBuffer temp = ByteBuffer.allocateDirect(1024*1024*30);
+			resList.add(temp);
+			
+//			byteList.add(new Byte[1024*104*8]);
+		}
+
+//		byte[] array = "abc".getBytes();
+//
+//		byteBuffer.put(array);
+//
+//		byteBuffer.flip();
+//
+//		byte[] dst = new byte[array.length];
+//
+//		byteBuffer.get(dst);
+//
+//		System.out.println(new String(dst));
+//		
+//		long baseOffset=getBaseAddress(byteBuffer);
+//		
+//		System.out.println(baseOffset);
 
 	}
 
