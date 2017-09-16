@@ -3,7 +3,7 @@ package algo;
 public class QuickSortWithTuningPerformance {
 
 	public static void main(String[] args) {
-		int[] src = { 3, 1, 2, 1, 6, 1, 1, 2, 0, 218, 10, 5, 1, 2, 1, 343, 43 };
+		int[] src = { 9,12,13,5,10,11,12 };
 		
 		
 		
@@ -36,11 +36,11 @@ public class QuickSortWithTuningPerformance {
 			return;
 		}
 
-		if (h - l + 1 >= 3) {
-			// 小数组用插入排序
-			insertSort(src, l, h);
-			return;
-		}
+//		if (h - l + 1 >= 3) {
+//			// 小数组用插入排序
+//			insertSort(src, l, h);
+//			return;
+//		}
 
 		int j = partion(src, l, h);
 

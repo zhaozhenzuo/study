@@ -10,9 +10,7 @@ public class EdenTest {
 
 		List<Byte[]> resList = new ArrayList<Byte[]>();
 
-		Byte[] bytes = new Byte[1024 * 1024 * 10];
-
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 8; i++) {
 			resList.add(new Byte[1024 * 1024 * 10]);
 		}
 

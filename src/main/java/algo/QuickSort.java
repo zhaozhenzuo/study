@@ -13,7 +13,7 @@ package algo;
 public class QuickSort {
 
 	public static void main(String[] args) {
-		int[] src = { 3, 12, 31, 1, 2, 1, 6, 1, 1, 2, 0, 218, 7, 2, 1, 20 };
+		int[] src = {9,12,13,5,10,11,12  };
 		// int[] src = { 3, 1, 4,5 };
 		sortEntrance(src);
 
