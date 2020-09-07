@@ -5,23 +5,22 @@ import java.util.PriorityQueue;
 public class KthLargest {
 
     public static void main(String[] args) {
-        int k = 3;
-        int[] arr = {4, 5, 8, 2};
-        KthLargest kthLargest = new KthLargest(3, arr);
-        int r1 = kthLargest.add(3);// returns 4
-        int r2 = kthLargest.add(5);// returns 5
-        int r3 = kthLargest.add(10);// returns 5
-        int r4 = kthLargest.add(9);// returns 8
+        int[] arr = {};
+        KthLargest kthLargest = new KthLargest(1, arr);
+        int r1 = kthLargest.add(-3);// returns 4
+        System.out.println(r1);
+        int r2 = kthLargest.add(-2);// returns 5
+        int r3 = kthLargest.add(-4);// returns 5
+        int r4 = kthLargest.add(0);// returns 8
         int r5 = kthLargest.add(4);// returns 8
 
     }
 
-    PriorityQueue<Integer> priorityQueue;
+    PriorityQueue<Integer> priorityQueue=new PriorityQueue<>();
     int k;
 
     public KthLargest(int k, int[] a) {
         this.k = k;
-        priorityQueue = new PriorityQueue<>(k);
         for (int val : a)
             add(val);
     }
